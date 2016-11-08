@@ -1,0 +1,29 @@
+{
+    "listen" : "0.0.0.0:8000",
+    "daemonize" : true,
+    "pidfile" : "/var/run/breeze.pid",
+    "logfile" : "/var/log/breeze.log",
+    "loglevel" : "debug",
+
+    "sites" : [{
+        "host" : "localhost",
+        "locations" : [{
+            "path": "/",
+            "module": "static",
+            "root": "/home/jerry/Documents/wiki",
+            "expires": "480",
+            "list_dir": false,
+            "gzip": true
+        }]
+    }, {
+        "host" : "jerrypeng.me",
+        "locations" : [{
+            "path": "~ .*\\.(png|jpg|jpeg|gif|css)",
+            "module": "static",
+            "root": "/home/jerry/Documents/wiki",
+            "expires": "24",
+            "list_dir": false,
+            "gzip": true
+        }]
+    }]
+}
